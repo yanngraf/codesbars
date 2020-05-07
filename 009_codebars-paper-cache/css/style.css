@@ -1,7 +1,16 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  display: grid;
 }
 canvas {
   display: block;
+}
+
+body {
+  background-color:#fbfbf5;
+}
+canvas { /* thing to center */
+  margin: auto;
 }

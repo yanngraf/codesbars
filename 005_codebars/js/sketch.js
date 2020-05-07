@@ -7,6 +7,7 @@ let  barcode = [];
 function setup() {
 
   createCanvas(800, 800);
+  background(251, 251, 245);
 
   noFill();
   strokeWeight(1);
@@ -26,7 +27,7 @@ function setup() {
 
 function draw() {
 
-  background(250, 250, 250 , 10);
+  background(251, 251, 245 , 10);
 
   for (let i = 0; i < nbLines; i++) {
     barcode[i].move();

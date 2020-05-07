@@ -9,7 +9,7 @@ let history = [];
 function setup() {
   createCanvas(800, 800);
   //background("#FAFAFA");
-  background(0);
+  background(251,251,245);
   //stroke("#0F0362");
   noiseDetail(2, 1);
   noFill();
@@ -24,7 +24,7 @@ function setup() {
 
 function draw() {
 
-  background(250, 250, 250 , 20);
+  background(251,251,245 , 20);
 
   drawHistory();
 
