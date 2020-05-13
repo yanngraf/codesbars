@@ -89,3 +89,8 @@ function drawHistory() {
 
   }
 }
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
