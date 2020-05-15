@@ -1,28 +1,23 @@
 let nbLines = 10;
-let scl = 151;
 let speed = 0.005; // good speed: 0.00005
 let noiseVal;
 let counter = 0;
-
 let history = [];
+let scl;
+
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(windowWidth, windowHeight);
   background("#FAFAFA");
   stroke("#0F0362");
   noiseDetail(2, 1);
   noFill();
 
-  // --------------- for exporting video/GIF
-  capturerSetup ();
-  // --------------- for exporting video/GIF
+  scl = Math.round(width/5.29); 
 }
 
 
-
 function draw() {
-
-  //background(250, 250, 250 , 20);
 
   drawHistory();
 
@@ -41,31 +36,18 @@ function draw() {
 
       center_x = x+noiseValX;
       center_y = y+noiseValY;
-    
-
       counter = counter + speed;
 
       fill('#FF003E');
-      //ellipse(center_x, center_y,6,6);
-      //ellipse(center_x+scl, center_y,3,3);
-
 
       var bubble = {xPos: center_x, yPos: center_y};
       history.push(bubble);
-
 
       if (history.length > 100) {
         history.shift(bubble);
       }
     }    
-   
   }
-
-  
-
-  // --------------- for exporting video/GIF
-  capturerDraw ();
-  // --------------- for exporting video/GIF
 }
 
 
@@ -74,22 +56,13 @@ function draw() {
 function drawHistory() {
   for (var i = 0; i < history.length; i++) {
     var pos = history[i];
-    //fill(pos.z);
-    //ellipse(pos.x, pos.y, 40);
-
-    //console.log(pos);
     fill('orange');
-    //var c = color(i,i,i);
     fill(i*10,i*20,i);
     stroke("black");
-
     line(pos.xPos, pos.yPos, pos.xPos+40, pos.yPos );
-    //ellipse(, pos.yPos,16,16);
     //ellipse(pos.xPos+scl, pos.yPos,3,3);
-
   }
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
