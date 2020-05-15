@@ -14,7 +14,7 @@ let  barcode = [];
 
 function setup() {
 
-  createCanvas(800, 800);
+  createCanvas(windowWidth, windowHeight);
   background(251, 251, 245);
 
   noFill();
@@ -24,10 +24,6 @@ function setup() {
   for (let i = 0; i < nbLines; i++) {
     barcode[i] = new Jitter();
   }
-
-  // --------------- for exporting video/GIF
-  capturerSetup ();
-  // --------------- for exporting video/GIF
 
 }
 
@@ -41,11 +37,6 @@ function draw() {
     barcode[i].move();
     barcode[i].display();
   }
-
-
-  // --------------- for exporting video/GIF
-  capturerDraw ();
-  // --------------- for exporting video/GIF
 }
 
 
@@ -73,4 +64,8 @@ class Jitter {
 
     line(this.x, 0, this.x, height);
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
