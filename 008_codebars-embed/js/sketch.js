@@ -16,10 +16,6 @@ function setup() {
     barcode[i] = new Jitter();
   }
 
-  // --------------- for exporting video/GIF
-  capturerSetup ();
-  // --------------- for exporting video/GIF
-
 }
 
 
@@ -33,10 +29,6 @@ function draw() {
     barcode[i].display();
   }
 
-
-  // --------------- for exporting video/GIF
-  capturerDraw ();
-  // --------------- for exporting video/GIF
 }
 
 
