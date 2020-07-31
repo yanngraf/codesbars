@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
 
-  background(0, 0, 0 , 10);
+  background(40, 40, 40 , 10);
 
   for (let i = 0; i < nbLines; i++) {
     barcode[i].move();
