@@ -116,7 +116,7 @@ function generateLayer (layerID, nbBars, direction, size, amplitude) {
   }
 
   //console.log (mousePos);
-  mousePos = map(mousePos,0,800,0, amplitude);
+  mousePos = map(mousePos,0,width,0, amplitude);
 
   // Draw the start cache
   rect(mousePos-2000,0,2000, 1000);
